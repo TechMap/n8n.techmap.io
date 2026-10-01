@@ -135,6 +135,8 @@ export class TechmapTrigger implements INodeType {
 			...additionalFiltersToQuery(filters),
 			dateCreatedMin: toIsoDate(new Date(now.getTime() - lookbackDays * DAY_MS)),
 			dateCreatedMax: toIsoDate(now),
+			// Newest first, so the first pages always contain the latest postings.
+			sort: 'newest',
 		});
 
 		const pagesToFetch = isManual ? 1 : maxPages;

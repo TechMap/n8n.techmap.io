@@ -45,6 +45,7 @@ describe('Techmap Trigger', () => {
 			countryCode: 'de',
 			dateCreatedMin: '2026-09-29',
 			dateCreatedMax: '2026-10-01',
+			sort: 'newest',
 			page: 1,
 		});
 	});

@@ -105,6 +105,31 @@ export class Techmap implements INodeType {
 				},
 			},
 			{
+				displayName: 'Sort',
+				name: 'sort',
+				type: 'options',
+				options: [
+					{
+						name: 'Newest First',
+						value: 'newest',
+						description: 'Most recently collected job postings first',
+					},
+					{
+						name: 'Oldest First',
+						value: 'oldest',
+						description: 'Stable order for paging through all results',
+					},
+				],
+				default: 'newest',
+				description: 'Order of the results by the time the job posting was collected',
+				displayOptions: {
+					show: {
+						resource: ['job'],
+						operation: ['search'],
+					},
+				},
+			},
+			{
 				displayName: 'Page',
 				name: 'page',
 				type: 'number',
@@ -218,6 +243,7 @@ export class Techmap implements INodeType {
 						...query,
 						...additionalFiltersToQuery(filters),
 						dateCreated,
+						sort: this.getNodeParameter('sort', i, 'newest') as string,
 						page: this.getNodeParameter('page', i, 1) as number,
 					});
 					const response = await techmapApiRequest.call(this, JOBS_SEARCH_PATH, qs);

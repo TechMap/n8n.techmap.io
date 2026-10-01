@@ -147,7 +147,7 @@ export function additionalFiltersToQuery(filters: IDataObject): IDataObject {
 	const query: IDataObject = {};
 	for (const [key, value] of Object.entries(filters)) {
 		if (key === 'excludeDuplicates') {
-			if (value === true) query.IsDuplicate = 'false';
+			if (value === true) query.isDuplicate = 'false';
 		} else if (key === 'hasSalary') {
 			if (value === true) query.hasSalary = 'true';
 		} else {

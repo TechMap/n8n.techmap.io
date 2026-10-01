@@ -64,9 +64,10 @@ describe('Techmap node', () => {
 				title: 'engineer',
 				workPlace: 'remote',
 				dateCreated: '2026-09-29',
+				sort: 'newest',
 				page: 2,
 				company: 'Example',
-				IsDuplicate: 'false',
+				isDuplicate: 'false',
 			});
 
 			expect(items).toHaveLength(2);
