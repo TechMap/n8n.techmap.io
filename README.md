@@ -47,6 +47,7 @@ The credential test calls the count endpoint of the Jobs API, which returns only
 | Occupation | Occupation stem, for example `engineer`, `nurse` or `manager` |
 | Work Place | Any, Remote, Hybrid, Onsite, Field or Offshore |
 | Date Created | Day (`YYYY-MM-DD`) or month (`YYYY-MM`). If empty, the API uses today minus two days |
+| Sort | Newest First (default) or Oldest First. Oldest First keeps a stable order for paging through all results |
 | Page | Result page, starting at 1. Each page holds up to 10 postings |
 | Simplify | Return the most useful fields (title, company, location, workplace, date, `id`, `url`, `description`) instead of the full record |
 | Additional Filters | Company, Contract Type, Exclude Duplicates, Has Salary, Industry, Language, Skills, State, Work Type |
@@ -61,7 +62,7 @@ Each job posting becomes one n8n item. Every returned posting counts towards you
 
 - Uses the same filters as the search operation.
 - Searches postings created between today minus **Lookback Days** (default 2) and today, because postings are indexed with a short delay.
-- Requests up to **Max Pages** pages of 10 postings per poll (default 1).
+- Requests the newest postings first, up to **Max Pages** pages of 10 postings per poll (default 1).
 - The first poll after activation only records the current postings; later polls emit new ones. A manual test run shows sample data and does not change the stored state.
 
 Each poll uses quota. With the free plan (1,000 postings per month) and Max Pages = 1, a poll every hour uses up to 7,200 postings per month, so poll every day or every few hours, or use a paid plan.
