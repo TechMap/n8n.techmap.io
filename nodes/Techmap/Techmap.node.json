@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-techmap.techmap",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage", "Marketing"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/TechMap/n8n.techmap.io?tab=readme-ov-file#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/TechMap/n8n.techmap.io?tab=readme-ov-file"
+			}
+		]
+	}
+}
